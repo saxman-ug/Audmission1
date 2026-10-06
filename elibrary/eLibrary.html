@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library - Africa United for Discipleship and Missions</title>
+    <link rel="stylesheet" href="eLibrary_styles.css">
+    <link rel="stylesheet" href="../css/whatsapp-button.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js"></script>
+     <!-- EmailJS SDK -->
+     <script type="text/javascript"
+     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+   emailjs.init({
+     publicKey: "Nc4udJzWhKXa4jni5",
+   });
+})();
+</script>
+</head>
+<body>
+        <header class="header">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../images/logo.png" alt="AUDM Logo" class="logo-img">
+                        <span>AUDMissions
+                             <span class="motto">Make disciples of all nations</span> 
+                        </span>
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="../index.html">Home</a>
+                    <div class="dropdown">
+                        <a href="" class="dropdown-link">About <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../about.html">About Us</a>
+                            <a href="../leadership.html">Leadership</a>
+                           
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="../programs.html" class="dropdown-link">Programs <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="../programs.html#evangelism">School of Evangelism</a>
+                            <a href="../programs.html#bible-school">Portable Bible School</a>
+                            <a href="../programs.html#children">Children's Ministries</a>
+                            <a href="../programs.html#youth">Youth's Ministries</a>
+                            <a href="../programs.html#bible-study">Inductive Bible Study</a>
+                            <a href="programs.html#win">Women impact Network</a>
+                        </div>
+                    </div>
+                    <a href="../outreach.html">Outreach</a>
+                    <a href="eLibrary.html" class="active">E-Library</a>
+                    <a href="../donate.html" >Donate</a>
+                    <a href="../contact.html">Contact</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+       
+
+    <main>
+        <section class="books-section">
+           
+            <h2>Heavenly Volumes</h2>
+            <p class="section-description">Browse through our collection of e-books. Click on any book to view or download.</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search books by title, author, or keywords...">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="books-grid">
+                <!-- Book: Ce que j'aurais aimé savoir avant de me marier -->
+                <div class="book-card">
+                    <img src="book image/ce que.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Ce que j'aurais aimé savoir avant de me marier</h3>
+                        <span class="book-author">Gary D. Chapman</span>
+                        <p class="book-description">Un guide essentiel pour les couples qui se préparent au mariage ou qui souhaitent renforcer leur relation.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Ce_que_jaurais_aimé_savoir_avant_de_me_marier_Gary_D_Chapman_z_lib.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Ce_que_jaurais_aimé_savoir_avant_de_me_marier_Gary_D_Chapman_z_lib.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: 10 Power Principles for Christian Service -->
+                <div class="book-card">
+                    <img src="book image/10 power.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">10 Power Principles for Christian Service</h3>
+                        <span class="book-author">Warren Wiersbe</span>
+                        <p class="book-description">Essential principles for effective Christian ministry and service.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/10 Power Principles for Christi - Warren Wiersbe.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/10 Power Principles for Christi - Warren Wiersbe.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Actions de grâce, louange, Adoration -->
+                <div class="book-card">
+                    <img src="book image/actions de.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Actions de grâce, louange, Adoration</h3>
+                        <span class="book-author">Derek Prince</span>
+                        <p class="book-description">Un guide profond sur la prière et l'adoration chrétienne.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Actions de grâces, louange, Adoration - Derek Prince.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Actions de grâces, louange, Adoration - Derek Prince.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: 77 erreurs courantes commises par les célibataires -->
+                <div class="book-card">
+                    <img src="book image/77.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">77 erreurs courantes commises par les célibataires</h3>
+                        <span class="book-author">D.K. Olukoya</span>
+                        <p class="book-description">Un guide pour éviter les pièges courants dans la vie des célibataires chrétiens.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/77_erreurs_courantes_commises_par_les_célibataires_D_K_Olukoya-1.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/77_erreurs_courantes_commises_par_les_célibataires_D_K_Olukoya-1.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Bible Study Guides -->
+                <div class="book-card">
+                    <img src="book image/study.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Bible Study Guides</h3>
+                        <span class="book-author">AUDM</span>
+                        <p class="book-description">Weekly Bible study guides in English and Luganda for spiritual growth.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Bible study English 13th-19th January 2025.pdf')" class="btn btn-primary">English Guide</button>
+                            <a href="ebook/Bible study Luganda 13th-19th January 2025.pdf" download class="btn btn-outline">Luganda Guide</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: L'Homme en 3 Dimensions -->
+                <div class="book-card">
+                    <img src="book image/homme.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">L'Homme en 3 Dimensions</h3>
+                        <span class="book-author">Unknown</span>
+                        <p class="book-description">Une exploration profonde de la nature humaine sous trois aspects.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/04 L\'Homme en 3  Dimensions(2).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/04 L'Homme en 3  Dimensions(2).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: ACTIVER LA PUISSANCE DE LA CROIX -->
+                <div class="book-card">
+                    <img src="book image/activer.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">ACTIVER LA PUISSANCE DE LA CROIX</h3>
+                        <span class="book-author">Tony Evans</span>
+                        <p class="book-description">Une étude approfondie sur la puissance de la croix dans la vie du croyant.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/ACTIVER LA PUISSANCE DE LA CROIX- Tony Evans FR.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/ACTIVER LA PUISSANCE DE LA CROIX- Tony Evans FR.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Chaque Eglise -->
+                <div class="book-card">
+                    <img src="book image/chaque.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Chaque Eglise</h3>
+                        <span class="book-author">Elmer Towns, C. Peter Wagner, Thom S. Rainer</span>
+                        <p class="book-description">Guide pour la croissance et le développement de l'église locale.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Chaque Eglise_Guide pour la croissance_Elmer Towns_C Peter Wagner_Thom S Rainer.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Chaque Eglise_Guide pour la croissance_Elmer Towns_C Peter Wagner_Thom S Rainer.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Christ And His Righteousness -->
+                <div class="book-card">
+                    <img src="book image/christ and his.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Christ And His Righteousness</h3>
+                        <span class="book-author">E.J. Waggoner</span>
+                        <p class="book-description">A profound study of Christ's righteousness and its significance for believers.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Christ And His Righteousness (E. J. Waggoner) (Z-Library).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Christ And His Righteousness (E. J. Waggoner) (Z-Library).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: The Purpose Driven Life -->
+                <div class="book-card">
+                    <img src="book image/purpose.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">The Purpose Driven Life</h3>
+                        <span class="book-author">Rick Warren</span>
+                        <p class="book-description">A transformative journey to discover your God-given purpose in life.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/- Warren, Rick - The Purpose Driven Life - FULL-1.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/- Warren, Rick - The Purpose Driven Life - FULL-1.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Breath Prayer -->
+                <div class="book-card">
+                    <img src="book image/breath.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Breath Prayer</h3>
+                        <span class="book-author">Christine Valters Paintner</span>
+                        <p class="book-description">An ancient practice for the everyday sacred, exploring the power of prayer in daily life.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Breath Prayer An Ancient Practice for the Everyday Sacred (Christine Valters Paintner) (Z-Library).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Breath Prayer An Ancient Practice for the Everyday Sacred (Christine Valters Paintner) (Z-Library).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: 7 puissantes prières pour la joie du Seigneur -->
+                <div class="book-card">
+                    <img src="book image/7 puissants.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">7 puissantes prières pour la joie du Seigneur</h3>
+                        <span class="book-author">Adam Houge</span>
+                        <p class="book-description">Un guide pour approfondir votre relation avec Dieu à travers la prière.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/7 puissantes prières pour la joie du Seigneur - Adam Houge.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/7 puissantes prières pour la joie du Seigneur - Adam Houge.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: 100 noms de Dieu -->
+                <div class="book-card">
+                    <img src="book image/100 noms.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">100 noms de Dieu</h3>
+                        <span class="book-author">Unknown</span>
+                        <p class="book-description">Une exploration des différents noms de Dieu et leur signification dans la Bible.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/100 noms de Dieu.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/100 noms de Dieu.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Administration de l'eglise -->
+                <div class="book-card">
+                    <img src="book image/adminstration.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Administration de l'eglise</h3>
+                        <span class="book-author">Dag Heward-Mills</span>
+                        <p class="book-description">Guide pratique pour l'administration efficace de l'église locale.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Administration de l\'eglise - Dag Heward-Mills-1.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Administration de l'eglise - Dag Heward-Mills-1.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Amour, fiançailles et mariage -->
+                <div class="book-card">
+                    <img src="book image/financial.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Amour, fiançailles et mariage</h3>
+                        <span class="book-author">Unknown</span>
+                        <p class="book-description">Un guide biblique pour les relations, les fiançailles et le mariage.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Amour, fiancailles et mariage.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Amour, fiancailles et mariage.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: 90 dévotions pour enfants dans Matthieu -->
+                <div class="book-card">
+                    <img src="book image/90 devotions.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">90 dévotions pour enfants dans Matthieu</h3>
+                        <span class="book-author">Unknown</span>
+                        <p class="book-description">Un guide de dévotion quotidien pour aider les enfants à comprendre l'Évangile de Matthieu.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/90 dévotions pour enfants dans Matthieu.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/90 dévotions pour enfants dans Matthieu.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Aider l'Enfant à Grandir dans la Foi -->
+                <div class="book-card">
+                    <img src="book image/adier.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Aider l'Enfant à Grandir dans la Foi</h3>
+                        <span class="book-author">Dr Sam Doherty</span>
+                        <p class="book-description">Guide pratique pour les parents et éducateurs sur le développement spirituel des enfants.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Aider l\'Enfant à Grandir dans la Foi-Dr Sam Doherty.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Aider l'Enfant à Grandir dans la Foi-Dr Sam Doherty.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Chrétien, tu es libre -->
+                <div class="book-card">
+                    <img src="book image/chretien.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Chrétien, tu es libre</h3>
+                        <span class="book-author">Unknown</span>
+                        <p class="book-description">Une exploration de la liberté en Christ et de la vie chrétienne authentique.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/chretien-tu-es-libre.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/chretien-tu-es-libre.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Christiana et ses enfants -->
+                <div class="book-card">
+                    <img src="book image/christiana.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Christiana et ses enfants</h3>
+                        <span class="book-author">John Bunyan</span>
+                        <p class="book-description">La suite du Voyage du Pèlerin, racontant l'histoire de Christiana et de ses enfants.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Christiana_et_ses_enfants_le_voyage_du_pélerin_2_John_Bunyan_.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Christiana_et_ses_enfants_le_voyage_du_pélerin_2_John_Bunyan_.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Amour et justice de DIEU -->
+                <div class="book-card">
+                    <img src="book image/amour.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Amour et justice de DIEU</h3>
+                        <span class="book-author">Gert Kwakkel</span>
+                        <p class="book-description">Le fondement du salut du monde, explorant l'amour et la justice divine.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Amour et justice de DIEU, le fondement du salut du monde de Gert Kwakkel.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Amour et justice de DIEU, le fondement du salut du monde de Gert Kwakkel.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Can I Really Trust the Bible -->
+                <div class="book-card">
+                    <img src="book image/can i really.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Can I Really Trust the Bible?</h3>
+                        <span class="book-author">Barry Cooper</span>
+                        <p class="book-description">Addressing common questions about Scripture, truth, and how God speaks to us today.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Can I Really Trust the Bible And Other Questions About Scripture, Truth and How God Speaks (Barry Cooper [Cooper, Barry]) (z-lib.org).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Can I Really Trust the Bible And Other Questions About Scripture, Truth and How God Speaks (Barry Cooper [Cooper, Barry]) (z-lib.org).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Ce que j'aurais aimé Savoir avant d'avoir des Enfants -->
+                <div class="book-card">
+                    <img src="book image/ce que.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Ce que j'aurais aimé Savoir avant d'avoir des Enfants</h3>
+                        <span class="book-author">Gary Chapman</span>
+                        <p class="book-description">Un guide essentiel pour les futurs parents et les jeunes familles.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Ce que j\'aurais aimé Savoir avant d\'avoir des Enfants-Chapman Gary.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Ce que j'aurais aimé Savoir avant d'avoir des Enfants-Chapman Gary.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Le prix à payer pour un ministère de puissance -->
+                <div class="book-card">
+                    <img src="book image/le pri.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Le prix à payer pour un ministère de puissance</h3>
+                        <span class="book-author">Asa Alonso Allen</span>
+                        <p class="book-description">Une étude sur les sacrifices nécessaires pour un ministère efficace.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/55_Asa_Alonso_Allen_Le_prix_a_payer_pour_un_ministere_de_puissance.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/55_Asa_Alonso_Allen_Le_prix_a_payer_pour_un_ministere_de_puissance.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: La faveur de Dieu -->
+                <div class="book-card">
+                    <img src="book image/la favour.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">La faveur de Dieu</h3>
+                        <span class="book-author">Unknown</span>
+                        <p class="book-description">Une exploration de la faveur divine et de son impact sur la vie du croyant.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/8-La-faveur-de-Dieu.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/8-La-faveur-de-Dieu.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Awake to Righteousness -->
+                <div class="book-card">
+                    <img src="book image/awake to .jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Awake to Righteousness</h3>
+                        <span class="book-author">Mark Greenwood</span>
+                        <p class="book-description">A call to live a life of righteousness and spiritual awakening.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Awake to Righteousness_ A Life- - Mark Greenwood.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Awake to Righteousness_ A Life- - Mark Greenwood.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: A Cross-Shattered Church -->
+                <div class="book-card">
+                    <img src="book image/across.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">A Cross-Shattered Church</h3>
+                        <span class="book-author">Stanley Hauerwas</span>
+                        <p class="book-description">Reclaiming the theological heart of preaching in the modern church.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/A Cross-Shattered Church Reclaiming the Theological Heart of Preaching (Stanley Hauerwas) (Z-Library).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/A Cross-Shattered Church Reclaiming the Theological Heart of Preaching (Stanley Hauerwas) (Z-Library).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: A Taste of Heaven -->
+                <div class="book-card">
+                    <img src="book image/a taste of heaven.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">A Taste of Heaven</h3>
+                        <span class="book-author">R.C. Sproul</span>
+                        <p class="book-description">Worship in the light of eternity, exploring the depth of Christian worship.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/A Taste of Heaven Worship in the Light of Eternity (Sproul, R. C.) (Z-Library).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/A Taste of Heaven Worship in the Light of Eternity (Sproul, R. C.) (Z-Library).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Le sacrifice d'une mère -->
+                <div class="book-card">
+                    <img src="book image/le sacrifice.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Le sacrifice d'une mère</h3>
+                        <span class="book-author">Unknown</span>
+                        <p class="book-description">Une exploration du rôle sacré de la maternité dans la foi chrétienne.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/094.Le sacrifice d&#039;une mère .pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/094.Le sacrifice d'une mère .pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: 365 Daily Treasures Of Wisdom -->
+                <div class="book-card">
+                    <img src="book image/365 days.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">365 Daily Treasures Of Wisdom</h3>
+                        <span class="book-author">Barbour Publishing</span>
+                        <p class="book-description">Daily devotional readings to inspire and guide your spiritual journey.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/365 Daily Treasures Of Wisdom (Publishing, Barbour) (Z-Library).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/365 Daily Treasures Of Wisdom (Publishing, Barbour) (Z-Library).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+                <!-- Book: Célébrer Jésus dans les fêtes bibliques -->
+                <div class="book-card">
+                    <img src="book image/celebrating jesus.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Célébrer Jésus dans les fêtes bibliques</h3>
+                        <span class="book-author">Dr Richard Booker</span>
+                        <p class="book-description">Une exploration des fêtes bibliques et leur signification messianique.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Célébrer_Jésus_dans_les_fêtes_bibliques_Dr_Richard_Booker.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Célébrer_Jésus_dans_les_fêtes_bibliques_Dr_Richard_Booker.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: A More Excellent Way -->
+                <div class="book-card">
+                    <img src="book image/a more.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">A More Excellent Way</h3>
+                        <span class="book-author">Marina Abraham</span>
+                        <p class="book-description">A spiritual growth journal for young people seeking to deepen their faith.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/A More Excellent Way A Spiritual Growth Journal for Young People (Marina Abraham) (Z-Library).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/A More Excellent Way A Spiritual Growth Journal for Young People (Marina Abraham) (Z-Library).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- Book: An Invitation to Love -->
+                <div class="book-card">
+                    <img src="book image/an invitation.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">An Invitation to Love</h3>
+                        <span class="book-author">William A. Barry</span>
+                        <p class="book-description">A personal retreat on the Great Commandment and the power of love.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/An Invitation to Love A Personal Retreat on the Great Commandment (William A. Barry) (Z-Library).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/An Invitation to Love A Personal Retreat on the Great Commandment (William A. Barry) (Z-Library).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: A la recherche du vrai sens de noël -->
+                <div class="book-card">
+                    <img src="book image/ala che.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">A la recherche du vrai sens de noël</h3>
+                        <span class="book-author">Bernard Guy</span>
+                        <p class="book-description">Une exploration du véritable sens de la célébration de Noël.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/A la recherche du vrai sens de noël - Bernard Guy.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/A la recherche du vrai sens de noël - Bernard Guy.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Célébrer Noël avec Jesus -->
+                <div class="book-card">
+                    <img src="book image/celebre.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Célébrer Noël avec Jesus</h3>
+                        <span class="book-author">Max Lucado</span>
+                        <p class="book-description">Une célébration spirituelle de la naissance de Jésus-Christ.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Célébrer Noël avec Jesus - Max Lucado.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Célébrer Noël avec Jesus - Max Lucado.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Chercher les âmes perdues -->
+                <div class="book-card">
+                    <img src="book image/chercher.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Chercher les âmes perdues</h3>
+                        <span class="book-author">Coy Roper</span>
+                        <p class="book-description">Un guide pour l'évangélisation et le témoignage chrétien.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Chercher les âmes perdues - Coy Roper.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Chercher les âmes perdues - Coy Roper.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Be Strong and Take Heart -->
+                <div class="book-card">
+                    <img src="book image/be strong.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Be Strong and Take Heart</h3>
+                        <span class="book-author">Zondervan</span>
+                        <p class="book-description">40 days to a hope-filled life through faith and perseverance.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Be Strong and Take Heart 40 Days to a Hope-Filled Life (Zondervan) (Z-Library).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Be Strong and Take Heart 40 Days to a Hope-Filled Life (Zondervan) (Z-Library).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: A Beginners Guide To Christian Meditation -->
+                <div class="book-card">
+                    <img src="book image/a begginer.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">A Beginners Guide To Christian Meditation</h3>
+                        <span class="book-author">Taylor Remington</span>
+                        <p class="book-description">An introduction to the practice of Christian meditation and contemplation.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/A Beginners Guide To Christian Meditation (Taylor Remington) (Z-Library).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/A Beginners Guide To Christian Meditation (Taylor Remington) (Z-Library).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: 21 Laws of Leadership -->
+                <div class="book-card">
+                    <img src="book image/21 laws.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">21 Laws of Leadership</h3>
+                        <span class="book-author">John C. Maxwell</span>
+                        <p class="book-description">Timeless principles for effective leadership in any context.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/21_Laws_of_Leadershi_by_John_C_Maxwell_Max_z_lib_or.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/21_Laws_of_Leadershi_by_John_C_Maxwell_Max_z_lib_or.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book: Bulls, Bears and Golden Calves -->
+                 <div class="book-card">
+                    <img src="book image/bulls .jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Bulls, Bears and Golden Calves</h3>
+                        <span class="book-author">John E. Stapleford</span>
+                        <p class="book-description">Applying Christian ethics in economics and financial decision-making.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Bulls, Bears and Golden Calves Applying Christian Ethics in Economics (John E. Stapleford) (Z-Library).pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Bulls, Bears and Golden Calves Applying Christian Ethics in Economics (John E. Stapleford) (Z-Library).pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+             
+                <!-- Book: Chercher Allah, trouver Jésus -->
+                <div class="book-card">
+                    <img src="book image/allah.jpg" alt="Book Cover" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">Chercher Allah, trouver Jésus</h3>
+                        <span class="book-author">Unknown</span>
+                        <p class="book-description">Le témoignage d'un musulman dévot qui découvre le christianisme.</p>
+                        <div class="book-actions">
+                            <button onclick="openPDF('ebook/Chercher_Allah,_trouver_Jésus_un_musulman_dévot_rencontre_le_christianisme1.pdf')" class="btn btn-primary">View Online</button>
+                            <a href="ebook/Chercher_Allah,_trouver_Jésus_un_musulman_dévot_rencontre_le_christianisme1.pdf" download class="btn btn-outline">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF Viewer Modal -->
+        <div id="pdfModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="pdfViewer"></div>
+                <div class="pdf-controls">
+                    <button id="prevPage" class="pdf-btn">Previous</button>
+                    <span id="pageInfo">Page <span id="currentPage">1</span> of <span id="totalPages">0</span></span>
+                    <button id="nextPage" class="pdf-btn">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- WhatsApp Group Section -->
+        <section class="whatsapp-section">
+            <div class="whatsapp-card">
+                <div class="whatsapp-content">
+                    <i class="fab fa-whatsapp whatsapp-icon"></i>
+                    <h3>Join Our E-Library WhatsApp Group</h3>
+                    <p>Looking for more books or need to order additional copies? Join our WhatsApp group to:</p>
+                    <ul>
+                        <li>Access our complete collection of books</li>
+                        <li>Request specific titles</li>
+                        <li>Get updates on new additions</li>
+                        <li>Connect with other readers</li>
+                    </ul>
+                    <a href="https://chat.whatsapp.com/JkpvhR4JhVRAWyohRTMSgW" class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        Join Our WhatsApp Group
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="order-section">
+            <div class="form-card">
+                <h2>Order a Book</h2>
+                <form id="orderForm" class="styled-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <div class="input-icon">
+                               
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-icon">
+                               
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookTitle">Book Title</label>
+                            <div class="input-icon">
+                                <input type="text" id="bookTitle" name="bookTitle" placeholder="Enter the title of the book you want to order" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <div class="input-icon">
+                             
+                                <textarea id="message" name="message" rows="4" placeholder="Enter your message or special instructions" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit"  onclick="sendMail()" class="submit-btn">
+                        <span>Send Order</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../images/logo.png" alt="AUDM Logo" class="logo-img">
+                        <span>AUDMissions</span>
+                    </div>               
+                </div>
+                <div class="footer-grid">
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="../about.html" class="footer-link">About Us</a></li>
+                            <li><a href="../programs.html" class="footer-link">Programs</a></li>
+                            <li><a href="./eLibrary.html" class="footer-link">E-Library</a></li>
+                            <li><a href="../donate.html" class="footer-link">Donate</a></li>
+                            <li><a href="../contact.html" class="footer-link">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> P.O. Box 28710 KAMPALA – UGANDA</li>
+                            <li><i class="fas fa-phone"></i> +256 709 088098</li>
+                            <li><i class="fas fa-envelope"></i> infoaudmissions@gmail.com</li>
+                        </ul>
+                        <div class="office-hours">
+                            <h4>Office Hours</h4>
+                            <ul>
+                                <li><i class="far fa-clock"></i> Monday - Friday: 8:00 AM - 5:00 PM</li>
+                                <!--   <li><i class="far fa-clock"></i> Saturday: 9:00 AM - 1:00 PM</li>  -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Connect</h3>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=61576249748955" class="social-link" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/AUDMISSIONS256?t=2s5JVV4hG7ULgNux95Do1g&s=09" class="social-link" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/@AUDMissions" class="social-link" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a href="https://wa.me/256767632726" class="social-link" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                        <div class="newsletter">
+                            <h4>Stay Updated</h4>
+                            <p>Subscribe to our newsletter for updates and mission news</p>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Your email" required>
+                                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Africa United for Discipleship and Missions. All rights reserved.</p>
+                    <!--  <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                -->
+                </div>
+               
+            </div>
+        </div>
+    </footer>
+
+    <script src="eLibrary_script.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/whatsapp-button.js"></script>
+</body>
+</html>
