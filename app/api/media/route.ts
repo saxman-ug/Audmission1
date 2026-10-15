@@ -18,7 +18,11 @@ export async function GET() {
     .order("created_at", { ascending: false });
 
   if (error) {
-    return NextResponse.json({ error: "Unable to load published media." }, { status: 500 });
+    console.error("[MEDIA API] Supabase query failed:", error);
+    return NextResponse.json(
+      { error: "Unable to load published media." },
+      { status: 500 }
+    );
   }
 
   const assets = await Promise.all(
