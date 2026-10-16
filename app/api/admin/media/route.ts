@@ -74,7 +74,6 @@ export async function POST(request: Request) {
       mime_type: mimeType,
       file_size: fileSize,
       object_path: objectPath,
-      created_by: admin.user.id,
       is_published: false,
     })
     .select("id,title,description,category,media_type,mime_type,file_size,object_path,is_published,created_at")

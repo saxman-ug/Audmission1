@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
+import * as tus from "tus-js-client";
 
 type MediaItem = {
   id: string;
@@ -223,19 +224,55 @@ export default function AdminDashboard() {
         throw new Error(permission.error || "Could not prepare upload.");
       }
 
-      setMessage("Uploading file to storage…");
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-      const supabase = createSupabaseBrowserClient();
-      const { error: uploadError } = await supabase.storage
-        .from("media")
-        .uploadToSignedUrl(permission.path, permission.token, file, {
-          contentType: mimeType,
-          upsert: false,
+      if (!supabaseUrl || !anonKey) {
+        throw new Error("Supabase browser configuration is missing.");
+      }
+
+      const projectHost = new URL(supabaseUrl).hostname.replace(
+        ".supabase.co",
+        ".storage.supabase.co"
+      );
+
+      if (projectHost === new URL(supabaseUrl).hostname) {
+        throw new Error("Could not determine the Supabase Storage hostname.");
+      }
+
+      setMessage("Starting resumable upload…");
+
+      await new Promise<void>((resolve, reject) => {
+        const upload = new tus.Upload(file, {
+          endpoint: `https://${projectHost}/storage/v1/upload/resumable`,
+          retryDelays: [0, 3000, 5000, 10000, 20000],
+          headers: {
+            apikey: anonKey,
+            "x-signature": permission.token,
+          },
+          uploadDataDuringCreation: true,
+          removeFingerprintOnSuccess: true,
+          chunkSize: 6 * 1024 * 1024,
+          metadata: {
+            bucketName: "media",
+            objectName: permission.path,
+            contentType: mimeType,
+            cacheControl: "3600",
+          },
+          onProgress(bytesUploaded, bytesTotal) {
+            const percent = Math.floor((bytesUploaded / bytesTotal) * 100);
+            setMessage(`Uploading file… ${percent}%`);
+          },
+          onError(error) {
+            reject(new Error("Resumable upload failed: " + error.message));
+          },
+          onSuccess() {
+            resolve();
+          },
         });
 
-      if (uploadError) {
-        throw new Error("File upload failed: " + uploadError.message);
-      }
+        upload.start();
+      });
 
       setMessage("Saving media details…");
 
