@@ -31,7 +31,9 @@ export async function GET() {
         .from(MEDIA_BUCKET)
         .createSignedUrl(asset.object_path, 3600);
 
-      return signedError ? null : { ...asset, signed_url: signed.signedUrl };
+      if (signedError) return null;
+      const { object_path: _omit, ...publicAsset } = asset;
+      return { ...publicAsset, signed_url: signed.signedUrl };
     }),
   );
 

@@ -22,14 +22,15 @@ export async function GET() {
 
   if (error) return NextResponse.json({ error: "Unable to load media." }, { status: 500 });
 
-  const items = await Promise.all(
-    (data as MediaAsset[]).map(async (asset) => {
-      const { data: signed } = await admin.service.storage
-        .from(MEDIA_BUCKET)
-        .createSignedUrl(asset.object_path, 3600);
-      return { ...asset, signed_url: signed?.signedUrl ?? null };
-    }),
-  );
+  const assets = data as MediaAsset[];
+  const { data: signedList } = await admin.service.storage
+    .from(MEDIA_BUCKET)
+    .createSignedUrls(assets.map((asset) => asset.object_path), 3600);
+  const urlByPath = new Map((signedList ?? []).map((entry) => [entry.path, entry.signedUrl]));
+  const items = assets.map((asset) => ({
+    ...asset,
+    signed_url: urlByPath.get(asset.object_path) ?? null,
+  }));
 
   return NextResponse.json({ items });
 }
@@ -80,8 +81,19 @@ export async function POST(request: Request) {
     .single();
 
   if (error) {
+    console.error("AUDMISSIONS_MEDIA_INSERT_ERROR", {
+      code: error.code,
+      message: error.message,
+      details: error.details,
+      hint: error.hint,
+    });
+
     await admin.service.storage.from(MEDIA_BUCKET).remove([objectPath]);
-    return NextResponse.json({ error: "Unable to save media details." }, { status: 500 });
+
+    return NextResponse.json(
+      { error: "Unable to save media details." },
+      { status: 500 }
+    );
   }
 
   return NextResponse.json({ item: data }, { status: 201 });

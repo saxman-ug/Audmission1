@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
-import * as tus from "tus-js-client";
+import { createClient } from "@supabase/supabase-js";
 
 type MediaItem = {
   id: string;
@@ -231,48 +231,16 @@ export default function AdminDashboard() {
         throw new Error("Supabase browser configuration is missing.");
       }
 
-      const projectHost = new URL(supabaseUrl).hostname.replace(
-        ".supabase.co",
-        ".storage.supabase.co"
-      );
-
-      if (projectHost === new URL(supabaseUrl).hostname) {
-        throw new Error("Could not determine the Supabase Storage hostname.");
-      }
-
-      setMessage("Starting resumable upload…");
-
-      await new Promise<void>((resolve, reject) => {
-        const upload = new tus.Upload(file, {
-          endpoint: `https://${projectHost}/storage/v1/upload/resumable`,
-          retryDelays: [0, 3000, 5000, 10000, 20000],
-          headers: {
-            apikey: anonKey,
-            "x-signature": permission.token,
-          },
-          uploadDataDuringCreation: true,
-          removeFingerprintOnSuccess: true,
-          chunkSize: 6 * 1024 * 1024,
-          metadata: {
-            bucketName: "media",
-            objectName: permission.path,
-            contentType: mimeType,
-            cacheControl: "3600",
-          },
-          onProgress(bytesUploaded, bytesTotal) {
-            const percent = Math.floor((bytesUploaded / bytesTotal) * 100);
-            setMessage(`Uploading file… ${percent}%`);
-          },
-          onError(error) {
-            reject(new Error("Resumable upload failed: " + error.message));
-          },
-          onSuccess() {
-            resolve();
-          },
-        });
-
-        upload.start();
+      setMessage("Uploading file…");
+      const browserClient = createClient(supabaseUrl, anonKey, {
+        auth: { persistSession: false, autoRefreshToken: false },
       });
+      const { error: uploadError } = await browserClient.storage
+        .from("media")
+        .uploadToSignedUrl(permission.path, permission.token, file, {
+          contentType: mimeType,
+        });
+      if (uploadError) throw new Error("Upload failed: " + uploadError.message);
 
       setMessage("Saving media details…");
 
