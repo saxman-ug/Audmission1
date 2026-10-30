@@ -15,7 +15,7 @@ export type MediaAsset = {
 };
 
 export const MEDIA_BUCKET = "media";
-export const MAX_MEDIA_BYTES = 500 * 1024 * 1024;
+export const MAX_MEDIA_BYTES = 50 * 1024 * 1024;
 
 export function isAllowedMedia(kind: MediaKind, mimeType: string): boolean {
   if (kind === "ebook") return mimeType === "application/pdf";

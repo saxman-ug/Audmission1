@@ -198,8 +198,8 @@ export default function AdminDashboard() {
       return;
     }
 
-    if (file.size > 500 * 1024 * 1024) {
-      setMessage("The file exceeds the 500 MB limit.");
+    if (file.size > 50 * 1024 * 1024) {
+      setMessage("The file exceeds the 50 MB limit. Compress it or choose a smaller file.");
       return;
     }
 
@@ -368,7 +368,7 @@ export default function AdminDashboard() {
                     accept=".pdf,.jpg,.jpeg,.png,.webp,.gif,.mp4,.webm"
                     required
                   />
-                  <small>Maximum 500 MB. Large videos may need a resumable upload.</small>
+                  <small>Maximum 50 MB per file. Compress large videos before uploading.</small>
                 </div>
               </div>
               <div>

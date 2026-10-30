@@ -61,7 +61,7 @@ export async function POST(request: Request) {
     fileSize > MAX_MEDIA_BYTES
   ) {
     return NextResponse.json(
-      { error: "File type or size is invalid. Maximum size is 500 MB." },
+      { error: "File type or size is invalid. Maximum size is 50 MB." },
       { status: 400 },
     );
   }
